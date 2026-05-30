@@ -29,6 +29,9 @@ async function openWindow() {
       center: true,
       parent: main,
       acceptFirstMouse: true,
+      resizable: false,
+      minimizable: false,
+      maximizable: false,
    });
 
    win.once("tauri://created", async () => {
