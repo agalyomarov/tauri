@@ -26,6 +26,8 @@
       "core:window:allow-set-always-on-bottom",
       "core:window:allow-set-decorations",
       "core:window:allow-set-position",
-      "core:window:allow-set-effects"
+      "core:window:allow-set-effects",
+      "core:webview:allow-create-webview",
+      "core:window:allow-request-user-attention"
    ]
 }

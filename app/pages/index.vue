@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { getCurrentWindow } from "@tauri-apps/api/window";
+import { getCurrentWindow, UserAttentionType } from "@tauri-apps/api/window";
 import { WebviewWindow } from "@tauri-apps/api/webviewWindow";
+import { Webview } from "@tauri-apps/api/webview";
 
 async function openWindow() {
    const main = getCurrentWindow();
@@ -19,6 +20,7 @@ async function openWindow() {
    await main.setResizable(false);
    await main.setMinimizable(false);
    await main.setMaximizable(false);
+   await main.requestUserAttention(UserAttentionType.Informational);
 
    const win = new WebviewWindow("settings", {
       url: "/settings",
