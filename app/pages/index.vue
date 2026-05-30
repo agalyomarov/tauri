@@ -32,11 +32,10 @@ async function openWindow() {
       resizable: false,
       minimizable: false,
       maximizable: false,
+      focus: true,
    });
 
-   win.once("tauri://created", async () => {
-      await win.setFocus();
-   });
+   win.once("tauri://created", async () => {});
 
    win.once("tauri://error", (e) => {
       console.error(e);
