@@ -32,7 +32,7 @@ async function openWindow() {
    });
 
    win.once("tauri://created", async () => {
-      // await win.setFocus();
+      await win.setFocus();
    });
 
    win.once("tauri://error", (e) => {
