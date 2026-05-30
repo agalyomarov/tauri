@@ -17,6 +17,8 @@ async function openWindow() {
    // 🔒 блокируем main window
    await main.setClosable(false);
    await main.setFocusable(false);
+   await main.setResizable(false);
+   await main.setMinimizable(false);
 
    const win = new WebviewWindow("settings", {
       url: "/settings",
@@ -26,7 +28,6 @@ async function openWindow() {
       alwaysOnTop: true,
       center: true,
       parent: main,
-      preventOverflow: true,
    });
 
    win.once("tauri://created", async () => {
