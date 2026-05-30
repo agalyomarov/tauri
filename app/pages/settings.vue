@@ -12,6 +12,7 @@ async function focusMain() {
       await main.setFocusable(true);
       await main.setResizable(true);
       await main.setMinimizable(true);
+      await main.setMaximizable(true);
    }
 }
 

@@ -19,6 +19,7 @@ async function openWindow() {
    await main.setFocusable(false);
    await main.setResizable(false);
    await main.setMinimizable(false);
+   await main.setMaximizable(false);
 
    const win = new WebviewWindow("settings", {
       url: "/settings",
