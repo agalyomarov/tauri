@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { Effect, getCurrentWindow } from "@tauri-apps/api/window";
+import { getCurrentWindow } from "@tauri-apps/api/window";
 import { WebviewWindow } from "@tauri-apps/api/webviewWindow";
-import { invoke } from "@tauri-apps/api/core";
 
 async function openWindow() {
    const main = getCurrentWindow();
@@ -29,6 +28,7 @@ async function openWindow() {
       alwaysOnTop: true,
       center: true,
       parent: main,
+      acceptFirstMouse: true,
    });
 
    win.once("tauri://created", async () => {
