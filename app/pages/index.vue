@@ -11,6 +11,8 @@ async function openWindow() {
    if (existing) {
       await existing.show();
       await existing.setFocus();
+      await existing.requestUserAttention(UserAttentionType.Critical);
+      console.log(existing);
       return;
    }
 
@@ -20,7 +22,6 @@ async function openWindow() {
    await main.setResizable(false);
    await main.setMinimizable(false);
    await main.setMaximizable(false);
-   await main.requestUserAttention(UserAttentionType.Informational);
 
    const win = new WebviewWindow("settings", {
       url: "/settings",
